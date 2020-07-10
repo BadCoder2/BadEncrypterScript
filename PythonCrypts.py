@@ -7,7 +7,7 @@ if sys.version_info[0] !=3: #Python3 ONLY!!
 	raise NotImplementedError("Required features of Python 3 not found. Please run this with python 3 (user@localhost: python3 PythonCrypts.py)")
 
 
-
+#If this comment shows up in github it is working!!!
 
 if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
 	flag = Arg[1] #the flag is the second argument (first being this file)
