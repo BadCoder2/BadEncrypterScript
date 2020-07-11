@@ -18,4 +18,4 @@ requests-unixsocket==0.1.5
 SecretStorage==2.3.1
 six==1.11.0
 systemd-python==234
-urllib3==1.22
+urllib3==1.24.2
