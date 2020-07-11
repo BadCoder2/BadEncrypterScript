@@ -54,7 +54,7 @@ else:
 		else: #if they said something else
 			print("Unknown response. Trying again...") #tell them
 			i += 1 #increment
-		if loop == 3:
+		if i == 3:
 			raise TimeoutError("No answer given.")
 #-----------------------------------------------------------TEXT ENCRYPTION-----------------------------------------------------------------------------#
 if PyCrypt == "crypt":
