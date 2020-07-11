@@ -6,8 +6,8 @@ i = 0 #setting up
 if sys.version_info[0] !=3: #Python3 required
 	raise NotImplementedError("Required features of Python 3 not found. Please run this with python 3 (user@localhost: python3 PythonCrypts.py)") #enforce
 
+PyCrypt = '' #error handling if text encryption is hit before PyCrypt is defined, specifically when using help function
 
-#If this comment shows up in github it is working!!!
 
 if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
 	flag = Arg[1] #the flag is the second argument (first being this file)
@@ -31,17 +31,18 @@ if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
 			print("Encoded added to b64enc.txt (located in the same directory.)")
 
 	else:
-		if flag == 'H':
+		if flag == '-H':
 			print("Help has been activated.")
 			print("For NO encryption, please rerun with NO flags.")
 			print("For standard text encryption, rerun with 1 flag (anything)")
 			print("For image encryption, run with 2 flags (user@localhost:python3 PythonCrypts.py [*] [FULL image name.]")
 		else:
 			print("1 flag found. This is the first step!") #say there is a flag
+			print('DEBUG::: FLAG =',flag)
 			PyCrypt = 'crypt' #mark the modifier to say there is a flag
 else:	
 	while i < 4:
-		PyCrypt = input("No flag found. Input Y to continue with basically no encryption, D to decrypt an image or text, or N to stop. If you wish to get help, input N and rerun the script with the flag 'H' (user@localhost:python3 PythonCrypts.py -h) ") #say there is no flag
+		PyCrypt = input("No flag found. Input Y to continue with basically no encryption, D to decrypt an image or text, or N to stop. If you wish to get help, input N and rerun the script with the flag 'H' (user@localhost:python3 PythonCrypts.py -H) ") #say there is no flag
 		if PyCrypt == 'Y': #if they still want to go on
 			print("No encryption selected. Moving on...") #say "ok"
 			PyCrypt = 'skip' #mark the modifier to say no encryption
