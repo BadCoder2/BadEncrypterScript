@@ -3,8 +3,8 @@ import sys #general tools + read flags
 import base64 #"encryption"
 Arg = sys.argv #arguments = the function to get arguments
 i = 0 #setting up
-if sys.version_info[0] !=3: #Python3 ONLY!!
-	raise NotImplementedError("Required features of Python 3 not found. Please run this with python 3 (user@localhost: python3 PythonCrypts.py)")
+if sys.version_info[0] !=3: #Python3 required
+	raise NotImplementedError("Required features of Python 3 not found. Please run this with python 3 (user@localhost: python3 PythonCrypts.py)") #enforce
 
 
 #If this comment shows up in github it is working!!!
@@ -56,5 +56,5 @@ else:
 		if loop == 3:
 			raise TimeoutError("No answer given.")
 #-----------------------------------------------------------TEXT ENCRYPTION-----------------------------------------------------------------------------#
-if PyCrypt == 'crypt'
+if PyCrypt == "crypt":
 	print('DEBUG:::',PyCrypt,' expected crypt')
