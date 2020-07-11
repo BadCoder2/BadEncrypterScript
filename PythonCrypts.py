@@ -59,3 +59,7 @@ else:
 #-----------------------------------------------------------TEXT ENCRYPTION-----------------------------------------------------------------------------#
 if PyCrypt == "crypt":
 	print('DEBUG:::',PyCrypt,' expected crypt')
+	print('Selected: Encrypt')
+elif PyCrypt == "skip":
+	print('DEBUG:::',PyCrypt,' expected skip')
+	print('Selected: Base64 Encode for whatever reason')
