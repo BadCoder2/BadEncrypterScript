@@ -14,10 +14,15 @@ if len(Arg) >= 2: #if there are 2 or more arguments, than A, else, B
 	if len(Arg) >= 3:
 		flag2 = Arg[2]
 		print('2 flags found! Image encryption activated...')
-		print('Note: source images are NOT deleted when encrypted. Do it yourself (with better deletion tools)')
-		with open(flag2, "rb") as image:
-			read = image.read()
-			b64 = base64.b64encode(read)
+		print('Note: source images are NOT deleted when encrypted. Do it yourself if you truly wish')
+		try:
+			with open(flag2, "rb") as image:
+				read = image.read()
+				b64 = base64.b64encode(read)
+		except:
+			print("An error occured. Did you provide a valid image?")
+			print("Exiting!")
+			sys.exit()
 		with open("b64uenc.txt","wb") as text:
 			text.write(b64)
 			print("Unencoded added to b64uenc.txt (located in the same directory.)")
