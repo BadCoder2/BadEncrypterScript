@@ -2,14 +2,14 @@ from cryptography.fernet import Fernet #main encryptor
 import sys #general tools + read flags
 import base64 #"encryption"
 Arg = sys.argv #arguments = the function to get arguments
-i = 0 #setting up
+i = 0 #setting up for loops later
 if sys.version_info[0] !=3: #Python3 required
 	raise NotImplementedError("Required features of Python 3 not found. Please run this with python 3 (user@localhost: python3 PythonCrypts.py)") #enforce
 
 PyCrypt = '' #error handling if text encryption is hit before PyCrypt is defined, specifically when using help function
 
-
-if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
+#-------------------------------------------------------INITAL HANDLING + TEXT/IMAGE ENCRYPTION---------------------------------------------------------#
+if len(Arg) >= 2: #if there are 2 or more arguments, than A, else, B
 	flag = Arg[1] #the flag is the second argument (first being this file)
 	if len(Arg) >= 3:
 		flag2 = Arg[2]
@@ -31,7 +31,6 @@ if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
 			print("Encoded added to b64enc.txt (located in the same directory.)")
 
 	else:
-	
 		print("1 flag found. This is the first step!") #say there is a flag
 		print('DEBUG::: FLAG =',flag)
 		PyCrypt = 'crypt' #mark the modifier to say there is a flag
@@ -48,13 +47,14 @@ else:
 			print("Help has been activated.")
 			print("For NO encryption, please rerun with NO flags and input Y at the prompt.")
 			print("For standard text encryption, rerun with 1 flag (anything)")
-			print("For image encryption, run with 2 flags (user@localhost:python3 PythonCrypts.py [anything] [image file name/path]")
+			print("For image encryption, run with 2 flags ($:python3 PythonCrypts.py [anything] [image file name/path]")
 		elif PyCrypt == 'D':
 			raise ModuleNotFoundError('!!!!!!!!!!!!!!!!!!!!!!!!!!WORK IN PROGRESS!!!!!!!!!!!!!!!!!!!!!!!!!!')
 		else: #if they said something else
 			print("Unknown response. Trying again...") #tell them
 			i += 1 #increment
 		if i == 3:
+			i = 0 #in case i is needed later
 			raise TimeoutError("No answer given.")
 #-----------------------------------------------------------TEXT ENCRYPTION-----------------------------------------------------------------------------#
 if PyCrypt == "crypt":
