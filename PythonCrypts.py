@@ -31,24 +31,24 @@ if len(Arg) >= 2: #if there are 2 or more arguments, A, else, B
 			print("Encoded added to b64enc.txt (located in the same directory.)")
 
 	else:
-		if flag == '-H':
-			print("Help has been activated.")
-			print("For NO encryption, please rerun with NO flags.")
-			print("For standard text encryption, rerun with 1 flag (anything)")
-			print("For image encryption, run with 2 flags (user@localhost:python3 PythonCrypts.py [*] [FULL image name.]")
-		else:
-			print("1 flag found. This is the first step!") #say there is a flag
-			print('DEBUG::: FLAG =',flag)
-			PyCrypt = 'crypt' #mark the modifier to say there is a flag
+	
+		print("1 flag found. This is the first step!") #say there is a flag
+		print('DEBUG::: FLAG =',flag)
+		PyCrypt = 'crypt' #mark the modifier to say there is a flag
 else:	
 	while i < 4:
-		PyCrypt = input("No flag found. Input Y to continue with basically no encryption, D to decrypt an image or text, or N to stop. If you wish to get help, input N and rerun the script with the flag 'H' (user@localhost:python3 PythonCrypts.py -H) ") #say there is no flag
+		PyCrypt = input("No flag found. Input Y to continue with basically no encryption, D to decrypt an image or text, or N to stop. If you wish to get help, input H.") #say there is no flag
 		if PyCrypt == 'Y': #if they still want to go on
 			print("No encryption selected. Moving on...") #say "ok"
 			PyCrypt = 'skip' #mark the modifier to say no encryption
 			break #leave loop
 		elif PyCrypt == 'N': #if they don't want to go on
 			raise InterruptedError("ENDED") #end it
+		elif PyCrypt == 'H':
+			print("Help has been activated.")
+			print("For NO encryption, please rerun with NO flags and input Y at the prompt.")
+			print("For standard text encryption, rerun with 1 flag (anything)")
+			print("For image encryption, run with 2 flags (user@localhost:python3 PythonCrypts.py [anything] [image file name/path]")
 		elif PyCrypt == 'D':
 			raise ModuleNotFoundError('!!!!!!!!!!!!!!!!!!!!!!!!!!WORK IN PROGRESS!!!!!!!!!!!!!!!!!!!!!!!!!!')
 		else: #if they said something else
@@ -62,4 +62,3 @@ if PyCrypt == "crypt":
 	print('Selected: Encrypt')
 elif PyCrypt == "skip":
 	print('DEBUG:::',PyCrypt,' expected skip')
-	print('Selected: Base64 Encode for whatever reason')
